@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/style.css"> 
+  <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body id="login">
+  <header class="header">
+
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="">
+    </a>
+
+    <nav class="navbar">
+      <a href="">Início</a>
+      <a href="QuemSomos.html">Quem somos</a>
+      <a href="menu.html">Menu</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="icons">
+      <div class="fas fa-search" id="search-btn"></div>
+      <div class="fas fa-shopping-cart" id="cart-btn"></div>
+      <a href="/login.html" target="_blank">
+        <div class="fa-solid fa-user"></div>
+      </a>
+    </div>
+</header>
+    <!-- <div class="search-form">
+      <input type="search" id="search-box" placeholder="search here...">
+      <label for="search-box" class="fas fa-search"></label>
+    </div> -->
+    <main>
+    <div class="container">
+      <div class="buttonsForm">
+        <div class="btnColor"></div>
+        <button id="btnSignin">Entrar</button>
+        <button id="btnSignup">Cadastrar</button>
+      </div>
+
+      <form id="signin">
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Password"/>
+        <div class="divCheck">
+          <span class="loginspan">Esqueceu sua senha?</span>
+        </div>
+        <button type="submit">Entrar</button>
+      </form>
+
+      <form id="signup">
+        <input type="text" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Password" required />
+        <div class="divCheck">
+          <input type="checkbox" required />
+          <span class="loginspan">Termos</span>
+        </div>
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </main>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!Doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Café em Dobro - Produtos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="">
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">Início</a>
+            <a href="QuemSomos.html">Quem Somos</a>
+            <a href="menu.html">Menu</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <a href="/login.html" target="_blank"><div class="fa-solid fa-user"></div></a>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+    </header>
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> <span>Quem somos</span></h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="images/about-img.jpeg" alt="">
+            </div>
+
+            <div class="content">
+                <h3>Sobre a história do Café Em Dobro.</h3>
+                <h2>O amor pelo café, passa por aqui!</h2>
+                <div id="parent">
+                    <p>A Café Em Dobro foi criada em 1974, no dia 28 de Setembro busca a excelência no atendimento ao
+                    cliente, trazendo o que há de melhor no ramo do café e bebidas quentes. Acreditamos que o café une
+                    as pessoas, e sempre atendendo com agilidade tratamos nossos clientes como amigos, trazendo soluções
+                    para que possamos apreciar o melhor do café juntos.</p>
+                </div>
+                <a href="#" class="btn lerMais" id="alteraLink" >ler mais.</a><br>
+                <!-- <a href="#" id="alteraLinkTwo" onclick="lerMenos()">ler menos.</a><br> -->
+            </div>
+
+        </div>
+    </section>
+
+    
+
+    <script>
+
+        const alteraLink = document.getElementById('alteraLink'); //leitura do dom. Ta pegando o elemento que tem esse ID
+        alteraLink.addEventListener('click' , () =>{ 
+            if(alteraLink.className == 'btn lerMais'){
+                lerMais();
+            }else{
+                lerMenos();
+            }
+        })
+
+            function lerMais(){ 
+                const div = document.getElementById('parent') //leitura do dom. Ta pegando o elemento que tem esse ID
+                const paragrafo = document.createElement('p'); //criando uma nova tag p na página
+                paragrafo.textContent = 'Acreditamos que cada xícara de café é uma obra de arte. Nossos cafés são cuidadosamente selecionados a partir dos melhores grãos, provenientes de diferentes regiões produtoras. Valorizamos a qualidade, a sustentabilidade e a relação justa com os produtores, garantindo que cada xícara que você saboreie seja uma verdadeira celebração dos sentidos.'; //adicionando um conteúdo dentro dessa tag
+                div.appendChild(paragrafo); //adicionando o paragrafo criado dentro da div e informando que a div é seu pai.
+
+                const divContent = div.parentElement
+                const link = divContent.querySelector('#alteraLink') //leitura do dom. Ta pegando o elemento que tem esse ID
+                link.className = 'btn lerMenos' //altera o nome da classe do link 
+                link.textContent = "Ler menos." //altera o conteúdo do link
+            }
+
+            function lerMenos(){
+                const div = document.getElementById('parent'); //leitura do dom. Ta pegando o elemento que tem esse ID
+                const paragrafo = div.querySelector('p'); //leitura do dom. Ta lendo o paragrafo criado dentro da div com o id parent 
+                div.removeChild(paragrafo.nextElementSibling);
+
+                const divContent = div.parentElement  //leitura do dom. Traverse, ta pegando o pai da div 
+                const link = divContent.querySelector('#alteraLink') //leitura do dom. Ta pegando o elemento que tem esse ID
+                link.className = 'btn lerMais'
+                link.textContent = "Ler mais."
+            }
+
+
+    </script>
+</body>
+
+</html>
