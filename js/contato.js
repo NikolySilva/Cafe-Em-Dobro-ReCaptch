@@ -13,14 +13,7 @@ form.addEventListener('submit', (event) => {
     validaEmail();
     validaTelefone();
 
-    //verifica se o recaptcha foi selecionado
-    if (grecaptcha.getResponse() != ""){
-        return true;
-    }else{
-        alert('Selecione a caixa de "não sou um robô"');
-        return false
-    }
-}
+    
     
 });
 
@@ -30,19 +23,20 @@ function confirmarFormulario() {
     const email = document.getElementById('email').value
     const tel = document.getElementById('tel').value
     
-    if (nome === '' || email === '' || tel === '' || tel.length < 15) {
+    if (nome === '' || email === '' || tel === '' || tel.length < 15 || grecaptcha.getResponse() === "") {
+        alert('Selecione a caixa de "não sou um robô"');
         swal({
             title: "Preencha o formulario!!",
             icon: "error",
           });
         }else{
-        swal({
-            title: "Formulario preenchido com sucesso!",
-            icon: "success",
-        }).then(function () {
-            window.location.href = "contato.html";
-          });
-    }
+            swal({
+                title: "Formulario preenchido com sucesso!",
+                icon: "success",
+            }).then(function () {
+                window.location.href = "contato.html";
+              });
+        }
 
 }
 
