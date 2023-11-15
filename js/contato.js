@@ -24,11 +24,12 @@ function confirmarFormulario() {
     const tel = document.getElementById('tel').value
     
     if (nome === '' || email === '' || tel === '' || tel.length < 15 || grecaptcha.getResponse() === "") {
-        alert('Selecione a caixa de "não sou um robô"');
         swal({
             title: "Preencha o formulario!!",
             icon: "error",
           });
+        }else if(grecaptcha.getResponse() === ""){
+            alert('Selecione a caixa de "não sou um robô"');
         }else{
             swal({
                 title: "Formulario preenchido com sucesso!",
