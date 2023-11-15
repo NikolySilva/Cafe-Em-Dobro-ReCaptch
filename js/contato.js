@@ -23,7 +23,7 @@ function confirmarFormulario() {
     const email = document.getElementById('email').value
     const tel = document.getElementById('tel').value
     
-    if (nome === '' || email === '' || tel === '' || tel.length < 15 || grecaptcha.getResponse() === "") {
+    if (nome === '' || email === '' || tel === '' || tel.length < 15) {
         swal({
             title: "Preencha o formulario!!",
             icon: "error",
