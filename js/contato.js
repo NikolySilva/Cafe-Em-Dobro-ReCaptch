@@ -12,6 +12,15 @@ form.addEventListener('submit', (event) => {
     nameValidate();
     validaEmail();
     validaTelefone();
+
+    //verifica se o recaptcha foi selecionado
+    if (grecaptcha.getResponse() != ""){
+        return true;
+    }else{
+        alert('Selecione a caixa de "não sou um robô"');
+        return false
+    }
+}
     
 });
 
@@ -38,8 +47,6 @@ function confirmarFormulario() {
 }
 
 // VALIDAÇÃO DE FORM
-
-
 function setError(index) { //Coloca o erro quando o formulário não estiver de acordo
     campos[index].style.border = '2px solid #e63636'; // coloca uma borda vermelha em todos os elementos com a classe required 
     spans[index].style.display = 'block'; //desbloqueia o valor none do display no css mostrando assim o span com a mensagem de erro
